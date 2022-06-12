@@ -59,7 +59,8 @@ function clock() {
 
 
 function format_time(time) {
-
+    console.log("the current time is : ") ; 
+    console.log(time);
     link_time = new Date(time);
     console.log("the time received is : ");
     console.log(link_time.getSeconds());
