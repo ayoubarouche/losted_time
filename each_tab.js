@@ -4,23 +4,28 @@ let url = window.location.host;
 console.log(url);
 
 
-chrome.runtime.sendMessage({
-    from :'each_tab' , 
-    subject : 'showPageAction'
-}) ; 
+// send the link to the main script : 
 
+chrome.runtime.sendMessage({
+    from :'popup' , 
+    subject : 'how_much_time',
+    current_link : window.location.host  , 
+
+}); 
+
+// if popup asked for the current link time : 
 
 chrome.runtime.onMessage.addListener((msg , sender , response)=>{
-    if((msg.from==='popup') && (msg.subject==='DOMInfo')){
+    if((msg.from==='popup') && (msg.subject==='link')){
         var domInfo ={
-            total:document.querySelectorAll('*').length  , 
-            inputs:document.querySelectorAll('inputs').length  , 
-            buttons:document.querySelectorAll('button').length
+           link:window.location.host
         }; 
 
         response(domInfo) ;
     }
 }) ; 
+
+
 
 
 
