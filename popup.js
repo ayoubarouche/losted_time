@@ -50,7 +50,7 @@ function format(info) {
             console.log("the result is not empty it's contains : ");
             console.log(result[new_link]);
             // response({time:result[new_link]});
-
+            
             let current_intervale = format_time(result[new_link]['time']);
             result[new_link]['intervale'] = current_intervale ; 
             // update the current intervale : 

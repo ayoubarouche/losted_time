@@ -1,0 +1,1 @@
+fix the timer start only when i click on the extension : by using the content.
